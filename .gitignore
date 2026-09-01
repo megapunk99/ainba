@@ -31,3 +31,20 @@ dist-ssr
 server/.env
 node_modules/
 
+# Data & cache
+data/
+
+# Native build artifacts
+server/native/build/
+server/native/node_modules/
+
+# Scripts & logs
+SHARPEDGE.bat
+START.bat
+start.sh
+run-pipeline.sh
+server.log
+*.db
+*.db-shm
+*.db-wal
+
