@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#060a10" />
+<title>SHARPEDGE — NBA Intelligence Terminal</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg0:#060a10;--bg1:#0b1018;--bg2:#111822;--bg3:#182030;--bg4:#1f2a3c;--tx:#dce4f0;--tx2:#7a8aa0;--tx3:#404c60;--tx4:#2a3344;--green:#00e09e;--green2:#00c088;--green-bg:rgba(0,224,158,.08);--red:#ff4466;--red-bg:rgba(255,68,102,.08);--amber:#f0b429;--amber-bg:rgba(240,180,41,.08);--blue:#3b9eff;--blue-bg:rgba(59,158,255,.08);--border:rgba(255,255,255,.05);--border2:rgba(255,255,255,.08);--r:6px;--r2:10px;--mono:'JetBrains Mono','SF Mono','Fira Code','Cascadia Code',monospace;--sans:'Inter',-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif;--ease:cubic-bezier(.22,1,.36,1)}
+html{font-size:13px}body{font-family:var(--sans);background:var(--bg0);color:var(--tx);-webkit-font-smoothing:antialiased;overflow:hidden;height:100vh}
+a{text-decoration:none;color:inherit}button{cursor:pointer;border:none;background:none;font:inherit;color:inherit}input{font:inherit;color:inherit;background:transparent;border:none;outline:none}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+@keyframes fadeIn{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}@keyframes spin{to{transform:rotate(360deg)}}
+
+.shell{display:grid;grid-template-columns:52px 1fr;grid-template-rows:40px 1fr;height:100vh;overflow:hidden}
+@media(max-width:768px){.shell{grid-template-columns:1fr;grid-template-rows:40px 1fr 48px}}
+.topbar{grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:0 16px;background:var(--bg1);border-bottom:1px solid var(--border);z-index:100}
+.topbar-brand{display:flex;align-items:center;gap:6px;font-weight:800;font-size:12px;letter-spacing:.5px;margin-right:auto}.topbar-brand em{font-style:normal;color:var(--green)}.topbar-pulse{width:5px;height:5px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+.topbar-meta{font-family:var(--mono);font-size:10px;color:var(--tx3);display:flex;gap:12px}.topbar-meta .live{color:var(--green)}.topbar-meta .live::before{content:'';display:inline-block;width:4px;height:4px;border-radius:50%;background:var(--green);margin-right:4px;animation:pulse 1.5s infinite}
+.sidebar{grid-row:2;background:var(--bg1);border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;padding:8px 0;gap:2px;overflow-y:auto}
+@media(max-width:768px){.sidebar{display:none}}
+.sb-btn{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:var(--r);color:var(--tx3);transition:all .12s;position:relative}.sb-btn:hover{background:var(--bg3);color:var(--tx2)}.sb-btn.on{background:var(--green-bg);color:var(--green)}.sb-btn.on::after{content:'';position:absolute;left:0;top:25%;height:50%;width:2px;background:var(--green);border-radius:0 2px 2px 0}
+.sb-btn svg{width:16px;height:16px}.sb-spacer{flex:1}.sb-dot{width:4px;height:4px;border-radius:50%;background:var(--tx4);margin:4px auto}
+.main{overflow-y:auto;padding:16px;background:var(--bg0)}
+.bnav{position:fixed;bottom:0;left:0;right:0;display:none;background:var(--bg1);border-top:1px solid var(--border);justify-content:space-around;padding:4px 0 env(safe-area-inset-bottom,6px);z-index:100}
+@media(max-width:768px){.bnav{display:flex}}
+.bnav a{display:flex;flex-direction:column;align-items:center;gap:1px;padding:6px 12px;border-radius:var(--r);color:var(--tx3);font-size:9px;font-weight:600}.bnav a.on{color:var(--green)}.bnav svg{width:18px;height:18px}
+.panel{background:var(--bg1);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;animation:fadeIn .25s var(--ease)}
+.panel-h{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--border)}
+.panel-t{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--tx2);display:flex;align-items:center;gap:6px}.panel-t svg{width:13px;height:13px;color:var(--green)}
+.panel-b{padding:14px}
+.stat{padding:14px 16px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r)}
+.stat-l{font-size:9px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:.8px;margin-bottom:3px}
+.stat-v{font-family:var(--mono);font-size:22px;font-weight:800;letter-spacing:-.5px;line-height:1.1}.stat-v.g{color:var(--green)}.stat-v.r{color:var(--red)}.stat-v.b{color:var(--blue)}.stat-v.a{color:var(--amber)}
+.stat-d{font-size:10px;color:var(--tx3);margin-top:2px}
+.tbl{width:100%;border-collapse:collapse;font-size:11px}.tbl th{padding:8px 10px;text-align:left;font-size:9px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:.6px;border-bottom:1px solid var(--border);background:var(--bg1);position:sticky;top:0;z-index:1}.tbl td{padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:middle}.tbl tr:hover td{background:var(--bg2)}.tbl .mono{font-family:var(--mono)}.tbl .pos{color:var(--green)}.tbl .neg{color:var(--red)}
+.badge{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:99px;font-size:9px;font-weight:700;letter-spacing:.3px}.badge-g{background:var(--green-bg);color:var(--green)}.badge-r{background:var(--red-bg);color:var(--red)}.badge-a{background:var(--amber-bg);color:var(--amber)}.badge-b{background:var(--blue-bg);color:var(--blue)}.badge-n{background:var(--bg3);color:var(--tx3)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:6px 12px;border-radius:var(--r);font-size:11px;font-weight:600;transition:all .12s var(--ease);white-space:nowrap}.btn-g{background:var(--green);color:var(--bg0)}.btn-g:hover{background:var(--green2)}.btn-s{background:var(--bg3);color:var(--tx2);border:1px solid var(--border)}.btn-s:hover{background:var(--bg4);color:var(--tx)}.btn-r{background:var(--red-bg);color:var(--red);border:1px solid rgba(255,68,102,.15)}.btn-r:hover{background:var(--red);color:#fff}.btn-sm{padding:4px 8px;font-size:10px}
+.field{display:flex;flex-direction:column;gap:4px}.field-l{font-size:10px;font-weight:600;color:var(--tx3)}.field-i{padding:8px 10px;background:var(--bg0);border:1px solid var(--border);border-radius:var(--r);font-size:12px;font-family:var(--mono);color:var(--tx)}.field-i:focus{border-color:var(--green)}.field-i::placeholder{color:var(--tx4)}
+.log{background:var(--bg0);border:1px solid var(--border);border-radius:var(--r);font-family:var(--mono);font-size:10px;max-height:360px;overflow-y:auto}.log-e{display:grid;grid-template-columns:62px 44px 1fr;padding:3px 10px;border-bottom:1px solid rgba(255,255,255,.015);line-height:1.7}.log-e:hover{background:var(--bg2)}.log-t{color:var(--tx4)}.log-tp{font-weight:700;text-transform:uppercase;font-size:9px}.log-tp.info{color:var(--blue)}.log-tp.ok{color:var(--green)}.log-tp.err{color:var(--red)}.log-tp.warn{color:var(--amber)}.log-m{color:var(--tx2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.empty{text-align:center;padding:32px 16px}.empty-i{font-size:24px;margin-bottom:6px}.empty-t{font-size:12px;font-weight:700;color:var(--tx2);margin-bottom:2px}.empty-d{font-size:11px;color:var(--tx3);max-width:260px;margin:0 auto}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;z-index:200}.modal{background:var(--bg1);border:1px solid var(--border);border-radius:var(--r2);width:92%;max-width:420px;max-height:80vh;overflow-y:auto}.modal-h{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--border)}.modal-b{padding:16px}.modal-f{padding:10px 16px;border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:6px}
+.g{display:grid;gap:1px;background:var(--border)}.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g5{grid-template-columns:repeat(5,1fr)}
+@media(max-width:900px){.g3,.g4,.g5{grid-template-columns:repeat(2,1fr)}}@media(max-width:480px){.g2,.g3,.g4,.g5{grid-template-columns:1fr}}
+.key-c{display:flex;align-items:center;gap:12px;padding:10px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);margin-bottom:6px}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="topbar">
+    <div class="topbar-brand"><div class="topbar-pulse"></div>SHARP<em>EDGE</em></div>
+    <div class="topbar-meta"><span class="live">LIVE</span><span id="clock"></span><span id="engine-badge">JS</span></div>
+  </div>
+  <aside class="sidebar" id="sidebar"></aside>
+  <main class="main" id="main"></main>
+  <nav class="bnav" id="bnav"></nav>
+</div>
+
+<script>
+// ============================================================
+// STATE
+// ============================================================
+const S = {
+  page: 'dash',
+  games: [],
+  odds: [],
+  standings: null,
+  players: [],
+  teams: [],
+  keys: JSON.parse(localStorage.getItem('se_keys') || '[]'),
+  logs: JSON.parse(localStorage.getItem('se_logs') || '[]'),
+  signals: [],
+  agentStatus: null,
+};
+
+const $ = id => document.getElementById(id);
+const fmt = t => new Date(t).toLocaleTimeString('en-US', {hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+const ago = t => { const d=Date.now()-t; if(d<60000)return'now'; if(d<3600000)return Math.floor(d/60000)+'m'; if(d<86400000)return Math.floor(d/3600000)+'h'; return Math.floor(d/86400000)+'d'; };
+
+function addLog(type, msg) {
+  S.logs.unshift({ t: Date.now(), type, msg });
+  if (S.logs.length > 300) S.logs.length = 300;
+  localStorage.setItem('se_logs', JSON.stringify(S.logs));
+}
+
+function saveKeys() { localStorage.setItem('se_keys', JSON.stringify(S.keys)); }
+
+// ============================================================
+// DATA LOADING — fetch local JSON files, no server needed
+// ============================================================
+async function loadJSON(url) {
+  try {
+    const r = await fetch(url);
+    if (!r.ok) return null;
+    return await r.json();
+  } catch (e) { return null; }
+}
+
+async function loadAllData() {
+  addLog('info', 'Loading data from local files...');
+
+  // Load in parallel
+  const [scoreboard, odds, standings, teams] = await Promise.allSettled([
+    loadJSON('data/scoreboard.json'),
+    loadJSON('data/live-odds.json'),
+    loadJSON('data/standings.json'),
+    loadJSON('data/teams.json'),
+  ]);
+
+  if (scoreboard.status === 'fulfilled' && scoreboard.value) {
+    S.games = scoreboard.value.leagues?.[0]?.events || scoreboard.value.events || [];
+    addLog('ok', `Games: ${S.games.length} loaded`);
+  } else {
+    addLog('warn', 'No scoreboard data found');
+  }
+
+  if (odds.status === 'fulfilled' && Array.isArray(odds.value)) {
+    S.odds = odds.value;
+    addLog('ok', `Odds: ${S.odds.length} entries`);
+  } else {
+    addLog('warn', 'No odds data found');
+  }
+
+  if (standings.status === 'fulfilled' && standings.value) {
+    S.standings = standings.value;
+    addLog('ok', 'Standings loaded');
+  }
+
+  if (teams.status === 'fulfilled' && teams.value) {
+    S.teams = Array.isArray(teams.value) ? teams.value : (teams.value.sports?.[0]?.leagues?.[0]?.teams || []);
+    addLog('ok', `Teams: ${S.teams.length}`);
+  }
+
+  // Load player list from data directory
+  // We'll discover player files by trying known IDs from the file listing
+  addLog('info', 'Discovering player files...');
+}
+
+// ============================================================
+// SIDEBAR
+// ============================================================
+const NAV = [
+  { id:'dash', icon:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>', label:'Dashboard' },
+  { id:'odds', icon:'<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>', label:'Odds' },
+  { id:'standings', icon:'<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>', label:'Standings' },
+  { id:'teams', icon:'<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>', label:'Teams' },
+  { id:'predict', icon:'<path d="M12 20V10M18 20V4M6 20v-4"/>', label:'Predict' },
+  { id:'keys', icon:'<path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>', label:'Keys' },
+  { id:'logs', icon:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>', label:'Log' },
+];
+
+function renderSidebar() {
+  $('sidebar').innerHTML = NAV.map(n =>
+    `<button class="sb-btn${S.page===n.id?' on':''}" onclick="go('${n.id}')" title="${n.label}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${n.icon}</svg></button>`
+  ).join('') + '<div class="sb-spacer"></div>';
+  $('bnav').innerHTML = NAV.slice(0,5).map(n =>
+    `<a${S.page===n.id?' class="on"':''} onclick="go('${n.id}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">${n.icon}</svg>${n.label}</a>`
+  ).join('');
+}
+
+// ============================================================
+// PAGES
+// ============================================================
+function pgDash() {
+  const live = S.games.filter(g => g.status?.type?.state === 'in');
+  const up = S.games.filter(g => g.status?.type?.state === 'pre');
+  const fin = S.games.filter(g => g.status?.type?.state === 'post');
+  const activeKeys = S.keys.filter(k => k.status === 'ok').length;
+
+  return `
+  <div style="animation:fadeIn .3s var(--ease)">
+    <div class="g g5" style="margin-bottom:12px">
+      <div class="stat"><div class="stat-l">Games</div><div class="stat-v b">${S.games.length}</div><div class="stat-d">${S.odds.length} odds entries</div></div>
+      <div class="stat"><div class="stat-l">Live</div><div class="stat-v g">${live.length}</div><div class="stat-d">${live.length?'In progress':'Offseason'}</div></div>
+      <div class="stat"><div class="stat-l">Upcoming</div><div class="stat-v a">${up.length}</div></div>
+      <div class="stat"><div class="stat-l">Final</div><div class="stat-v">${fin.length}</div></div>
+      <div class="stat"><div class="stat-l">API Keys</div><div class="stat-v g">${activeKeys}/${S.keys.length}</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div class="panel">
+        <div class="panel-h"><div class="panel-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg> Upcoming Games</div><span class="badge badge-b">${up.length}</span></div>
+        <div class="panel-b" style="padding:6px;max-height:320px;overflow-y:auto">
+          ${up.length ? up.slice(0,8).map(g => {
+            const c=g.competitions?.[0]; const a=c?.competitors?.find(x=>x.homeAway==='away'); const h=c?.competitors?.find(x=>x.homeAway==='home');
+            return `<div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);margin-bottom:4px">
+              <div style="flex:1;display:flex;flex-direction:column;gap:1px">
+                <div style="display:flex;justify-content:space-between;font-size:11px"><span style="font-weight:600">${a?.team?.abbreviation||'?'}</span><span class="mono" style="font-weight:700">${a?.score||'-'}</span></div>
+                <div style="display:flex;justify-content:space-between;font-size:11px"><span style="font-weight:600">${h?.team?.abbreviation||'?'}</span><span class="mono" style="font-weight:700">${h?.score||'-'}</span></div>
+              </div>
+              <div style="font-size:10px;color:var(--tx3);min-width:50px;text-align:right">${new Date(g.date).toLocaleDateString('en-US',{month:'short',day:'numeric'})}</div>
+            </div>`;
+          }).join('') : '<div class="empty"><div class="empty-i">🏀</div><div class="empty-t">Offseason</div><div class="empty-d">Next season starts October 2026</div></div>'}
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-h"><div class="panel-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg> Activity</div><span class="badge badge-n">${S.logs.length}</span></div>
+        <div class="log" style="max-height:320px">
+          ${S.logs.slice(0,20).map(e => `<div class="log-e"><span class="log-t">${fmt(e.t)}</span><span class="log-tp ${e.type}">${e.type}</span><span class="log-m">${e.msg}</span></div>`).join('') || '<div class="empty" style="padding:24px"><div class="empty-d">No activity</div></div>'}
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function pgOdds() {
+  return `
+  <div class="panel">
+    <div class="panel-h"><div class="panel-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Odds Engine</div><span class="badge badge-n">${S.odds.length} games</span></div>
+    <div class="panel-b" style="padding:0;overflow-x:auto">
+      ${S.odds.length ? `
+        <table class="tbl">
+          <thead><tr><th>Game</th><th>Home ML</th><th>Away ML</th><th>Spread</th><th>Total</th><th>Books</th></tr></thead>
+          <tbody>
+            ${S.odds.map(o => {
+              const h=o.bookmakers?.[0]?.markets?.find(m=>m.key==='h2h');
+              const s=o.bookmakers?.[0]?.markets?.find(m=>m.key==='spreads');
+              const t=o.bookmakers?.[0]?.markets?.find(m=>m.key==='totals');
+              const hm=h?.outcomes?.find(x=>x.name===o.home_team);
+              const aw=h?.outcomes?.find(x=>x.name===o.away_team);
+              const sp=s?.outcomes?.find(x=>x.name===o.home_team);
+              const ov=t?.outcomes?.find(x=>x.name==='Over');
+              return `<tr>
+                <td style="font-weight:600;font-size:11px">${o.away_team} @ ${o.home_team}</td>
+                <td class="mono pos">${hm?.price>0?'+':''}${hm?.price??'—'}</td>
+                <td class="mono ${aw?.price>0?'pos':'neg'}">${aw?.price>0?'+':''}${aw?.price??'—'}</td>
+                <td class="mono">${sp?.point??'—'}</td>
+                <td class="mono">${ov?.point??'—'}</td>
+                <td><span class="badge badge-n">${o.bookmakers?.length||0}</span></td>
+              </tr>`;
+            }).join('')}
+          </tbody>
+        </table>
+      ` : '<div class="empty"><div class="empty-i">📊</div><div class="empty-t">No Odds Data</div><div class="empty-d">Run the data fetcher to load odds</div></div>'}
+    </div>
+  </div>`;
+}
+
+function pgStandings() {
+  const confs = S.standings?.children || [];
+  return `
+  <div style="animation:fadeIn .3s var(--ease)">
+    ${confs.map(conf => `
+      <div class="panel" style="margin-bottom:12px">
+        <div class="panel-h"><div class="panel-t">${conf.name||'Conference'}</div></div>
+        <div class="panel-b" style="padding:0;overflow-x:auto">
+          <table class="tbl">
+            <thead><tr><th>#</th><th style="text-align:left">Team</th><th>W</th><th>L</th><th>PCT</th><th>GB</th><th>L10</th><th>STRK</th></tr></thead>
+            <tbody>
+              ${(conf.standings?.entries||[]).map((entry,i) => {
+                const team=entry.team; const stats=entry.stats||[];
+                const find=s=>stats.find(x=>x.name===s)?.displayValue||'—';
+                return `<tr>
+                  <td style="font-family:var(--mono);font-weight:700;color:var(--tx3)">${i+1}</td>
+                  <td style="text-align:left"><div style="display:flex;align-items:center;gap:8px"><img src="${team?.logo||''}" style="width:20px;height:20px;object-fit:contain" onerror="this.style.display='none'"/><span style="font-weight:600;font-size:12px">${team?.abbreviation||team?.displayName||'???'}</span></div></td>
+                  <td class="mono">${find('wins')}</td><td class="mono">${find('losses')}</td>
+                  <td class="mono" style="font-weight:700">${find('winPercent')}</td>
+                  <td class="mono">${find('gamesBehind')}</td>
+                  <td class="mono">${stats.find(x=>x.name==='Last Ten Games')?.summary||'—'}</td>
+                  <td><span class="badge ${find('streak')?.includes('W')?'badge-g':'badge-r'}">${find('streak')}</span></td>
+                </tr>`;
+              }).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    `).join('')}
+    ${!confs.length ? '<div class="panel"><div class="panel-b"><div class="empty"><div class="empty-i">🏆</div><div class="empty-t">No Standings Data</div><div class="empty-d">Run the data fetcher to load standings.</div></div></div></div>' : ''}
+  </div>`;
+}
+
+function pgTeams() {
+  return `
+  <div class="panel" style="animation:fadeIn .3s var(--ease)">
+    <div class="panel-h"><div class="panel-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> All Teams</div><span class="badge badge-n">${S.teams.length}</span></div>
+    <div class="panel-b">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px">
+        ${S.teams.map(t => `
+          <div style="display:flex;flex-direction:column;align-items:center;padding:16px 8px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);text-align:center">
+            <img src="${t.team?.logo||''}" style="width:40px;height:40px;object-fit:contain;margin-bottom:8px" onerror="this.style.display='none'"/>
+            <div style="font-weight:700;font-size:12px">${t.team?.abbreviation||'???'}</div>
+            <div style="font-size:10px;color:var(--tx3);margin-top:2px">${t.team?.displayName||''}</div>
+          </div>
+        `).join('')}
+      </div>
+      ${!S.teams.length ? '<div class="empty"><div class="empty-i">🏀</div><div class="empty-t">No Teams Data</div></div>' : ''}
+    </div>
+  </div>`;
+}
+
+function pgPredict() {
+  // Show a list of player IDs from the data we know exists
+  const knownPlayers = [
+    {id:'2544',name:'LeBron James',team:'LAL'},
+    {id:'203999',name:'Nikola Jokic',team:'DEN'},
+    {id:'203954',name:'Stephen Curry',team:'GSW'},
+    {id:'1629029',name:'Luka Doncic',team:'DAL'},
+    {id:'203507',name:'Giannis Antetokounmpo',team:'MIL'},
+    {id:'1629627',name:'Jayson Tatum',team:'BOS'},
+    {id:'1628973',name:'Anthony Davis',team:'LAL'},
+    {id:'1628978',name:'Karl-Anthony Towns',team:'MIN'},
+    {id:'203944',name:'Joel Embiid',team:'PHI'},
+    {id:'1629630',name:'Devin Booker',team:'PHX'},
+    {id:'1628969',name:'Damian Lillard',team:'MIL'},
+    {id:'101108',name:'Chris Paul',team:'SAS'},
+    {id:'6450',name:'Chris Bosh',team:'MIA'},
+    {id:'6606',name:'Scottie Pippen',team:'CHI'},
+    {id:'1966',name:'Kareem Abdul-Jabbar',team:'LAL'},
+    {id:'1979',name:'Magic Johnson',team:'LAL'},
+  ];
+
+  return `
+  <div class="panel" style="animation:fadeIn .3s var(--ease)">
+    <div class="panel-h"><div class="panel-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg> Player Predictions</div></div>
+    <div class="panel-b" style="padding:0;overflow-x:auto">
+      <table class="tbl">
+        <thead><tr><th>Player</th><th>Team</th><th>Predict PPG</th><th>Confidence</th><th>Season Avg</th><th>Last 5</th><th>Trend</th></tr></thead>
+        <tbody>
+          ${knownPlayers.map(p => `<tr>
+            <td style="font-weight:600">${p.name}</td>
+            <td>${p.team}</td>
+            <td class="mono" id="pred-${p.id}"><span style="color:var(--tx4)">—</span></td>
+            <td class="mono" id="conf-${p.id}"><span style="color:var(--tx4)">—</span></td>
+            <td class="mono" id="avg-${p.id}"><span style="color:var(--tx4)">—</span></td>
+            <td class="mono" id="l5-${p.id}"><span style="color:var(--tx4)">—</span></td>
+            <td id="trend-${p.id}"><span style="color:var(--tx4)">—</span></td>
+            <td><button class="btn btn-g btn-sm" onclick="runPrediction('${p.id}','${p.name.replace(/'/g,"\\'")}')">Predict</button></td>
+          </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div id="prediction-result"></div>`;
+}
+
+function pgKeys() {
+  const presets = [
+    {name:'Odds API',provider:'odds-api',desc:'Real-time odds'},
+    {name:'ESPN',provider:'espn',desc:'Scores & standings'},
+    {name:'OpenAI',provider:'custom',desc:'AI predictions'},
+    {name:'Custom',provider:'custom',desc:'Any REST endpoint'},
+  ];
+  return `
+  <div class="panel" style="margin-bottom:12px">
+    <div class="panel-h"><div class="panel-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg> API Keys</div><button class="btn btn-g btn-sm" onclick="showKeyModal()">+ Add</button></div>
+    <div class="panel-b" style="padding:8px">
+      ${S.keys.length ? S.keys.map(k => `
+        <div class="key-c">
+          <div style="flex:1;min-width:0">
+            <div style="font-weight:700;font-size:12px">${k.name}</div>
+            <div style="font-size:10px;color:var(--tx3)">${k.provider}</div>
+            <div style="font-family:var(--mono);font-size:10px;color:var(--tx4);margin-top:1px">${k.key.length>8?k.key.slice(0,4)+'••••'+k.key.slice(-4):'••••••••'}</div>
+          </div>
+          <div style="display:flex;gap:4px;flex-shrink:0">
+            <span class="badge ${k.status==='ok'?'badge-g':k.status==='err'?'badge-r':'badge-n'}">${k.status}</span>
+            <button class="btn btn-s btn-sm" onclick="testKeyById(${k.id})">Test</button>
+            <button class="btn btn-r btn-sm" onclick="rmKeyById(${k.id})">×</button>
+          </div>
+        </div>
+      `).join('') : '<div class="empty"><div class="empty-i">🔑</div><div class="empty-t">No API Keys</div><div class="empty-d">Add your first key to start pulling live data.</div></div>'}
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-h"><div class="panel-t">Quick Add</div></div>
+    <div class="panel-b" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:6px">
+      ${presets.map(p => `
+        <button onclick="showKeyModal('${p.provider}','${p.name}')" style="padding:10px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);text-align:left;transition:all .12s" onmouseenter="this.style.borderColor='var(--green)'" onmouseleave="this.style.borderColor='var(--border)'">
+          <div style="font-weight:700;font-size:11px">${p.name}</div>
+          <div style="font-size:10px;color:var(--tx3);margin-top:2px">${p.desc}</div>
+        </button>
+      `).join('')}
+    </div>
+  </div>`;
+}
+
+function pgLogs() {
+  return `
+  <div class="panel">
+    <div class="panel-h"><div class="panel-t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg> Activity Log</div><div style="display:flex;gap:6px"><span class="badge badge-n">${S.logs.length}</span><button class="btn btn-r btn-sm" onclick="if(confirm('Clear?')){S.logs=[];localStorage.removeItem('se_logs');render()}">Clear</button></div></div>
+    <div class="panel-b" style="padding:0">
+      <div class="log" style="max-height:500px">
+        ${S.logs.length ? S.logs.map(e => `<div class="log-e"><span class="log-t">${fmt(e.t)}</span><span class="log-tp ${e.type}">${e.type}</span><span class="log-m">${e.msg}</span></div>`).join('') : '<div class="empty" style="padding:32px"><div class="empty-i">📋</div><div class="empty-t">No Logs</div></div>'}
+      </div>
+    </div>
+  </div>`;
+}
+
+// ============================================================
+// PREDICTIONS — local stat calculations (no server needed)
+// ============================================================
+async function runPrediction(id, name) {
+  const el = $('pred-' + id);
+  if (el) el.innerHTML = '<span style="animation:spin 1s linear infinite;display:inline-block">⏳</span>';
+
+  // Try to load player gamelog from local files
+  const gamelog = await loadJSON(`data/player-gamelog-${id}.json`);
+  if (!gamelog?.splits?.sets?.length) {
+    if (el) el.innerHTML = '<span style="color:var(--tx3)">N/A</span>';
+    addLog('warn', `No gamelog for ${name}`);
+    return;
+  }
+
+  const games = gamelog.splits.sets;
+  const points = games.map(g => parseFloat(g.stats?.points || g.stats?.pts || 0)).filter(v => v > 0);
+  if (points.length < 3) {
+    if (el) el.innerHTML = '<span style="color:var(--tx3)">N/A</span>';
+    return;
+  }
+
+  // Calculate averages
+  const seasonAvg = points.reduce((a,b) => a+b, 0) / points.length;
+  const last5 = points.slice(0, Math.min(5, points.length));
+  const last5Avg = last5.reduce((a,b) => a+b, 0) / last5.length;
+  const last10 = points.slice(0, Math.min(10, points.length));
+  const last10Avg = last10.reduce((a,b) => a+b, 0) / last10.length;
+
+  // Prediction: weighted blend
+  const prediction = (last5Avg * 0.4) + (last10Avg * 0.3) + (seasonAvg * 0.3);
+
+  // Confidence: based on consistency
+  const mean = seasonAvg;
+  const variance = points.reduce((a,v) => a + (v - mean) ** 2, 0) / points.length;
+  const stddev = Math.sqrt(variance);
+  const cv = mean > 0 ? stddev / mean : 0.5;
+  const confidence = Math.round(Math.max(30, Math.min(95, (1 - cv * 0.8) * 100)));
+
+  // Trend
+  const trend = last5Avg - seasonAvg;
+  const trendPct = seasonAvg > 0 ? ((trend / seasonAvg) * 100) : 0;
+
+  // Display
+  if (el) el.innerHTML = `<span class="pos">${prediction.toFixed(1)}</span>`;
+  const confEl = $('conf-' + id);
+  if (confEl) confEl.textContent = confidence + '%';
+  const avgEl = $('avg-' + id);
+  if (avgEl) avgEl.textContent = seasonAvg.toFixed(1);
+  const l5El = $('l5-' + id);
+  if (l5El) l5El.textContent = last5Avg.toFixed(1);
+  const trendEl = $('trend-' + id);
+  if (trendEl) trendEl.innerHTML = trend > 0 ?
+    `<span class="badge badge-g">↑ ${trendPct.toFixed(1)}%</span>` :
+    `<span class="badge badge-r">↓ ${Math.abs(trendPct).toFixed(1)}%</span>`;
+
+  addLog('ok', `Prediction: ${name} → ${prediction.toFixed(1)} PPG (${confidence}% conf, ${points.length} games)`);
+
+  // Show detail panel
+  $('prediction-result').innerHTML = `
+    <div class="panel" style="margin-top:12px">
+      <div class="panel-h"><div class="panel-t">Prediction: ${name}</div></div>
+      <div class="panel-b">
+        <div class="g g4">
+          <div class="stat"><div class="stat-l">Predicted PPG</div><div class="stat-v g">${prediction.toFixed(1)}</div></div>
+          <div class="stat"><div class="stat-l">Confidence</div><div class="stat-v b">${confidence}%</div></div>
+          <div class="stat"><div class="stat-l">Season Avg</div><div class="stat-v">${seasonAvg.toFixed(1)}</div></div>
+          <div class="stat"><div class="stat-l">Games Analyzed</div><div class="stat-v a">${points.length}</div></div>
+        </div>
+        <div style="margin-top:12px;font-size:11px;color:var(--tx2)">
+          <b>Breakdown:</b> Last 5: ${last5Avg.toFixed(1)} | Last 10: ${last10Avg.toFixed(1)} | StdDev: ${stddev.toFixed(1)} | Range: ${Math.min(...points).toFixed(0)}-${Math.max(...points).toFixed(0)}
+        </div>
+      </div>
+    </div>`;
+}
+
+// ============================================================
+// KEY MANAGEMENT
+// ============================================================
+function showKeyModal(prov, name) {
+  const providers = ['odds-api','espn','nba-stats','openai','custom'];
+  const bg = document.createElement('div');
+  bg.className = 'modal-bg'; bg.id = 'modal';
+  bg.onclick = e => { if (e.target === bg) bg.remove(); };
+  bg.innerHTML = `
+    <div class="modal">
+      <div class="modal-h"><div style="font-size:13px;font-weight:700">Add API Key</div><button class="btn btn-s btn-sm" onclick="$('modal').remove()">✕</button></div>
+      <div class="modal-b" style="display:flex;flex-direction:column;gap:12px">
+        <div class="field"><label class="field-l">Name</label><input class="field-i" id="mk-name" placeholder="e.g. My Odds Key" value="${name||''}"/></div>
+        <div class="field"><label class="field-l">Provider</label><div style="display:flex;gap:4px;flex-wrap:wrap">${providers.map(p=>`<button class="btn btn-sm ${(prov||'odds-api')===p?'btn-g':'btn-s'}" onclick="document.querySelectorAll('[data-mk]').forEach(b=>{b.className='btn btn-sm btn-s'});this.className='btn btn-sm btn-g';document.getElementById('mk-prov').value='${p}'" data-mk>${p}</button>`).join('')}</div><input class="field-i" id="mk-prov" type="hidden" value="${prov||'odds-api'}"/></div>
+        <div class="field"><label class="field-l">API Key</label><input class="field-i" id="mk-key" placeholder="Paste key" type="password" autocomplete="off"/></div>
+        <div class="field"><label class="field-l">Base URL <span style="color:var(--tx4)">(optional)</span></label><input class="field-i" id="mk-url" placeholder="https://api.example.com/v1"/></div>
+      </div>
+      <div class="modal-f"><button class="btn btn-s" onclick="$('modal').remove()">Cancel</button><button class="btn btn-g" onclick="doAddKey()">Add</button></div>
+    </div>`;
+  document.body.appendChild(bg);
+  setTimeout(() => $('mk-name')?.focus(), 80);
+}
+
+function doAddKey() {
+  const name = $('mk-name').value.trim();
+  const prov = $('mk-prov').value;
+  const key = $('mk-key').value.trim();
+  const url = $('mk-url').value.trim();
+  if (!name || !key) return alert('Name and key required');
+  S.keys.push({ id: Date.now(), name, provider: prov, key, url: url||'', status: 'idle', tested: null, ms: null, err: null });
+  saveKeys();
+  addLog('info', `Key added: ${name}`);
+  $('modal').remove();
+  render();
+}
+
+async function testKeyById(id) {
+  const k = S.keys.find(x => x.id === id);
+  if (!k) return;
+  k.status = 'testing'; render();
+  addLog('info', `Testing: ${k.name}...`);
+  const t0 = Date.now();
+  try {
+    let url, headers = {};
+    if (k.provider === 'odds-api') { url = 'https://api.the-odds-api.com/v4/sports'; headers['x-api-key'] = k.key; }
+    else if (k.provider === 'espn') { url = 'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard'; }
+    else { url = k.url || 'https://httpbin.org/get'; if (k.key) headers['Authorization'] = 'Bearer ' + k.key; }
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 8000);
+    const r = await fetch(url, { signal: ctrl.signal, headers });
+    clearTimeout(timer);
+    const ms = Date.now() - t0;
+    k.status = r.ok ? 'ok' : 'err';
+    k.tested = Date.now(); k.ms = ms;
+    k.err = r.ok ? null : 'HTTP ' + r.status;
+    addLog(r.ok ? 'ok' : 'err', `${k.name}: ${r.status} in ${ms}ms`);
+  } catch (e) {
+    k.status = 'err'; k.tested = Date.now(); k.ms = Date.now() - t0;
+    k.err = e.name === 'AbortError' ? 'Timeout' : e.message;
+    addLog('err', `${k.name}: ${k.err}`);
+  }
+  saveKeys(); render();
+}
+
+function rmKeyById(id) {
+  S.keys = S.keys.filter(x => x.id !== id);
+  saveKeys(); addLog('warn', 'Key removed'); render();
+}
+
+// ============================================================
+// NAVIGATION
+// ============================================================
+function go(page) { S.page = page; render(); }
+
+async function render() {
+  renderSidebar();
+  document.querySelectorAll('[data-p]').forEach(el => el.classList.toggle('on', el.dataset.p === S.page));
+  const m = $('main');
+  switch (S.page) {
+    case 'dash': m.innerHTML = pgDash(); break;
+    case 'odds': m.innerHTML = pgOdds(); break;
+    case 'standings': m.innerHTML = pgStandings(); break;
+    case 'teams': m.innerHTML = pgTeams(); break;
+    case 'predict': m.innerHTML = pgPredict(); break;
+    case 'keys': m.innerHTML = pgKeys(); break;
+    case 'logs': m.innerHTML = pgLogs(); break;
+    default: m.innerHTML = pgDash();
+  }
+}
+
+// ============================================================
+// BOOT
+// ============================================================
+(async function boot() {
+  // Clock
+  setInterval(() => {
+    const el = $('clock');
+    if (el) el.textContent = new Date().toLocaleTimeString('en-US', {hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+  }, 1000);
+
+  addLog('info', 'SHARPEDGE v2.0 — Terminal initialized');
+  await loadAllData();
+  render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,617 @@
+[
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.060Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.060Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.061Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.062Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.062Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.063Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.063Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.063Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.064Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.064Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.065Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.065Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.066Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.066Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.066Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.067Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.067Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.067Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.068Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.068Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.068Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.069Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.069Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.069Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.070Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.070Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.070Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.071Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.071Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.071Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.071Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.072Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.072Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.072Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.073Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.073Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.073Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.073Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.074Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.074Z",
+    "action": "PASS"
+  },
+  {
+    "game": "undefined @ undefined",
+    "side": "away",
+    "modelProb": "0.5000",
+    "marketProb": "0.5000",
+    "edge": "0.0000",
+    "confidence": "0.0000",
+    "factors": {
+      "injuryDiff": 0,
+      "winProb": 0.5
+    },
+    "strategies": [],
+    "timestamp": "2026-08-31T16:48:12.074Z",
+    "action": "PASS"
+  }
+]

@@ -1,0 +1,1444 @@
+{
+  "fetchedAt": "2026-09-01T03:10:23.830Z",
+  "events": [
+    {
+      "eventId": "26b036ff107f3c658258eaf4a6f26228",
+      "homeTeam": "Detroit Pistons",
+      "awayTeam": "Boston Celtics",
+      "commenceTime": "2026-10-20T19:00:00Z",
+      "props": [
+        {
+          "playerName": "Over",
+          "stat": "AST",
+          "statName": "player_assists",
+          "line": 9.5,
+          "overPrice": -108,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "AST",
+          "statName": "player_assists",
+          "line": 9.5,
+          "overPrice": -122,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "AST",
+          "statName": "player_assists",
+          "line": 5.5,
+          "overPrice": -130,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "AST",
+          "statName": "player_assists",
+          "line": 5.5,
+          "overPrice": -102,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PTS",
+          "statName": "player_points",
+          "line": 24.5,
+          "overPrice": -122,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PTS",
+          "statName": "player_points",
+          "line": 24.5,
+          "overPrice": -106,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PTS",
+          "statName": "player_points",
+          "line": 26.5,
+          "overPrice": -122,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PTS",
+          "statName": "player_points",
+          "line": 26.5,
+          "overPrice": -110,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PA",
+          "statName": "player_points_assists",
+          "line": 34.5,
+          "overPrice": -114,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PA",
+          "statName": "player_points_assists",
+          "line": 34.5,
+          "overPrice": -114,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PA",
+          "statName": "player_points_assists",
+          "line": 32.5,
+          "overPrice": -120,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PA",
+          "statName": "player_points_assists",
+          "line": 32.5,
+          "overPrice": -110,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PR",
+          "statName": "player_points_rebounds",
+          "line": 30.5,
+          "overPrice": -114,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PR",
+          "statName": "player_points_rebounds",
+          "line": 30.5,
+          "overPrice": -114,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PR",
+          "statName": "player_points_rebounds",
+          "line": 36.5,
+          "overPrice": -106,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PR",
+          "statName": "player_points_rebounds",
+          "line": 36.5,
+          "overPrice": -125,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PRA",
+          "statName": "player_points_rebounds_assists",
+          "line": 40.5,
+          "overPrice": -106,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PRA",
+          "statName": "player_points_rebounds_assists",
+          "line": 40.5,
+          "overPrice": -125,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PRA",
+          "statName": "player_points_rebounds_assists",
+          "line": 42.5,
+          "overPrice": -108,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PRA",
+          "statName": "player_points_rebounds_assists",
+          "line": 42.5,
+          "overPrice": -122,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "REB",
+          "statName": "player_rebounds",
+          "line": 8.5,
+          "overPrice": -146,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "REB",
+          "statName": "player_rebounds",
+          "line": 8.5,
+          "overPrice": 110,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "REB",
+          "statName": "player_rebounds",
+          "line": 5.5,
+          "overPrice": 104,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "REB",
+          "statName": "player_rebounds",
+          "line": 5.5,
+          "overPrice": -138,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "RA",
+          "statName": "player_rebounds_assists",
+          "line": 14.5,
+          "overPrice": -138,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "RA",
+          "statName": "player_rebounds_assists",
+          "line": 14.5,
+          "overPrice": 104,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "RA",
+          "statName": "player_rebounds_assists",
+          "line": 14.5,
+          "overPrice": -125,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "RA",
+          "statName": "player_rebounds_assists",
+          "line": 14.5,
+          "overPrice": -106,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "3PM",
+          "statName": "player_threes",
+          "line": 2.5,
+          "overPrice": -128,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "3PM",
+          "statName": "player_threes",
+          "line": 2.5,
+          "overPrice": -104,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "3PM",
+          "statName": "player_threes",
+          "line": 2.5,
+          "overPrice": 148,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "3PM",
+          "statName": "player_threes",
+          "line": 2.5,
+          "overPrice": -200,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        }
+      ]
+    },
+    {
+      "eventId": "2b042ddad3d3c6c6fe5b7005dc26c775",
+      "homeTeam": "New York Knicks",
+      "awayTeam": "Philadelphia 76ers",
+      "commenceTime": "2026-10-20T23:00:00Z",
+      "props": [
+        {
+          "playerName": "Over",
+          "stat": "AST",
+          "statName": "player_assists",
+          "line": 6.5,
+          "overPrice": -114,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "AST",
+          "statName": "player_assists",
+          "line": 6.5,
+          "overPrice": -114,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PTS",
+          "statName": "player_points",
+          "line": 25.5,
+          "overPrice": -122,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PTS",
+          "statName": "player_points",
+          "line": 25.5,
+          "overPrice": -108,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PA",
+          "statName": "player_points_assists",
+          "line": 32.5,
+          "overPrice": -122,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PA",
+          "statName": "player_points_assists",
+          "line": 32.5,
+          "overPrice": -108,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PR",
+          "statName": "player_points_rebounds",
+          "line": 29.5,
+          "overPrice": -104,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PR",
+          "statName": "player_points_rebounds",
+          "line": 29.5,
+          "overPrice": -128,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PRA",
+          "statName": "player_points_rebounds_assists",
+          "line": 35.5,
+          "overPrice": -128,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PRA",
+          "statName": "player_points_rebounds_assists",
+          "line": 35.5,
+          "overPrice": -104,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "REB",
+          "statName": "player_rebounds",
+          "line": 2.5,
+          "overPrice": -174,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "REB",
+          "statName": "player_rebounds",
+          "line": 2.5,
+          "overPrice": 128,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "RA",
+          "statName": "player_rebounds_assists",
+          "line": 9.5,
+          "overPrice": -120,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "RA",
+          "statName": "player_rebounds_assists",
+          "line": 9.5,
+          "overPrice": -110,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "3PM",
+          "statName": "player_threes",
+          "line": 2.5,
+          "overPrice": 116,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "3PM",
+          "statName": "player_threes",
+          "line": 2.5,
+          "overPrice": -154,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        }
+      ]
+    },
+    {
+      "eventId": "bccd283de56915e29af1788beb0abfc9",
+      "homeTeam": "San Antonio Spurs",
+      "awayTeam": "Oklahoma City Thunder",
+      "commenceTime": "2026-10-21T01:30:00Z",
+      "props": [
+        {
+          "playerName": "Over",
+          "stat": "AST",
+          "statName": "player_assists",
+          "line": 2.5,
+          "overPrice": -182,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "AST",
+          "statName": "player_assists",
+          "line": 2.5,
+          "overPrice": 136,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "AST",
+          "statName": "player_assists",
+          "line": 5.5,
+          "overPrice": -138,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "AST",
+          "statName": "player_assists",
+          "line": 5.5,
+          "overPrice": 104,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "BLK",
+          "statName": "player_blocks",
+          "line": 2.5,
+          "overPrice": -182,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "BLK",
+          "statName": "player_blocks",
+          "line": 2.5,
+          "overPrice": 134,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PTS",
+          "statName": "player_points",
+          "line": 29.5,
+          "overPrice": -125,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PTS",
+          "statName": "player_points",
+          "line": 29.5,
+          "overPrice": -106,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PTS",
+          "statName": "player_points",
+          "line": 26.5,
+          "overPrice": 100,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PTS",
+          "statName": "player_points",
+          "line": 26.5,
+          "overPrice": -132,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PA",
+          "statName": "player_points_assists",
+          "line": 36.5,
+          "overPrice": -106,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PA",
+          "statName": "player_points_assists",
+          "line": 36.5,
+          "overPrice": -125,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PA",
+          "statName": "player_points_assists",
+          "line": 28.5,
+          "overPrice": -125,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PA",
+          "statName": "player_points_assists",
+          "line": 28.5,
+          "overPrice": -106,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PR",
+          "statName": "player_points_rebounds",
+          "line": 37.5,
+          "overPrice": -108,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PR",
+          "statName": "player_points_rebounds",
+          "line": 37.5,
+          "overPrice": -122,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PR",
+          "statName": "player_points_rebounds",
+          "line": 34.5,
+          "overPrice": -108,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PR",
+          "statName": "player_points_rebounds",
+          "line": 34.5,
+          "overPrice": -122,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PRA",
+          "statName": "player_points_rebounds_assists",
+          "line": 40.5,
+          "overPrice": -110,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PRA",
+          "statName": "player_points_rebounds_assists",
+          "line": 40.5,
+          "overPrice": -120,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "PRA",
+          "statName": "player_points_rebounds_assists",
+          "line": 40.5,
+          "overPrice": -112,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "PRA",
+          "statName": "player_points_rebounds_assists",
+          "line": 40.5,
+          "overPrice": -118,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "REB",
+          "statName": "player_rebounds",
+          "line": 11.5,
+          "overPrice": 102,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "REB",
+          "statName": "player_rebounds",
+          "line": 11.5,
+          "overPrice": -136,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "REB",
+          "statName": "player_rebounds",
+          "line": 4.5,
+          "overPrice": 134,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "REB",
+          "statName": "player_rebounds",
+          "line": 4.5,
+          "overPrice": -180,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "RA",
+          "statName": "player_rebounds_assists",
+          "line": 9.5,
+          "overPrice": -146,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "RA",
+          "statName": "player_rebounds_assists",
+          "line": 9.5,
+          "overPrice": 110,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "RA",
+          "statName": "player_rebounds_assists",
+          "line": 14.5,
+          "overPrice": -106,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "RA",
+          "statName": "player_rebounds_assists",
+          "line": 14.5,
+          "overPrice": -125,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "3PM",
+          "statName": "player_threes",
+          "line": 1.5,
+          "overPrice": 100,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "3PM",
+          "statName": "player_threes",
+          "line": 1.5,
+          "overPrice": -132,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Over",
+          "stat": "3PM",
+          "statName": "player_threes",
+          "line": 1.5,
+          "overPrice": -188,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        },
+        {
+          "playerName": "Under",
+          "stat": "3PM",
+          "statName": "player_threes",
+          "line": 1.5,
+          "overPrice": 140,
+          "underPrice": null,
+          "bookmaker": "FanDuel"
+        }
+      ]
+    }
+  ],
+  "bestLines": [
+    {
+      "playerName": "Over",
+      "stat": "AST",
+      "line": 9.5,
+      "overPrice": -108,
+      "underPrice": null,
+      "bookmaker": "FanDuel",
+      "allBooks": [
+        {
+          "bookmaker": "FanDuel",
+          "line": 9.5,
+          "overPrice": -108,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 5.5,
+          "overPrice": -130,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 6.5,
+          "overPrice": -114,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 2.5,
+          "overPrice": -182,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 5.5,
+          "overPrice": -138,
+          "underPrice": null
+        }
+      ]
+    },
+    {
+      "playerName": "Under",
+      "stat": "AST",
+      "line": 9.5,
+      "overPrice": 136,
+      "underPrice": null,
+      "bookmaker": "FanDuel",
+      "allBooks": [
+        {
+          "bookmaker": "FanDuel",
+          "line": 9.5,
+          "overPrice": -122,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 5.5,
+          "overPrice": -102,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 6.5,
+          "overPrice": -114,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 2.5,
+          "overPrice": 136,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 5.5,
+          "overPrice": 104,
+          "underPrice": null
+        }
+      ]
+    },
+    {
+      "playerName": "Over",
+      "stat": "PTS",
+      "line": 24.5,
+      "overPrice": 100,
+      "underPrice": null,
+      "bookmaker": "FanDuel",
+      "allBooks": [
+        {
+          "bookmaker": "FanDuel",
+          "line": 24.5,
+          "overPrice": -122,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 26.5,
+          "overPrice": -122,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 25.5,
+          "overPrice": -122,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 29.5,
+          "overPrice": -125,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 26.5,
+          "overPrice": 100,
+          "underPrice": null
+        }
+      ]
+    },
+    {
+      "playerName": "Under",
+      "stat": "PTS",
+      "line": 24.5,
+      "overPrice": -106,
+      "underPrice": null,
+      "bookmaker": "FanDuel",
+      "allBooks": [
+        {
+          "bookmaker": "FanDuel",
+          "line": 24.5,
+          "overPrice": -106,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 26.5,
+          "overPrice": -110,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 25.5,
+          "overPrice": -108,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 29.5,
+          "overPrice": -106,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 26.5,
+          "overPrice": -132,
+          "underPrice": null
+        }
+      ]
+    },
+    {
+      "playerName": "Over",
+      "stat": "PA",
+      "line": 34.5,
+      "overPrice": -106,
+      "underPrice": null,
+      "bookmaker": "FanDuel",
+      "allBooks": [
+        {
+          "bookmaker": "FanDuel",
+          "line": 34.5,
+          "overPrice": -114,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 32.5,
+          "overPrice": -120,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 32.5,
+          "overPrice": -122,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 36.5,
+          "overPrice": -106,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 28.5,
+          "overPrice": -125,
+          "underPrice": null
+        }
+      ]
+    },
+    {
+      "playerName": "Under",
+      "stat": "PA",
+      "line": 34.5,
+      "overPrice": -106,
+      "underPrice": null,
+      "bookmaker": "FanDuel",
+      "allBooks": [
+        {
+          "bookmaker": "FanDuel",
+          "line": 34.5,
+          "overPrice": -114,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 32.5,
+          "overPrice": -110,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 32.5,
+          "overPrice": -108,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 36.5,
+          "overPrice": -125,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 28.5,
+          "overPrice": -106,
+          "underPrice": null
+        }
+      ]
+    },
+    {
+      "playerName": "Over",
+      "stat": "PR",
+      "line": 30.5,
+      "overPrice": -104,
+      "underPrice": null,
+      "bookmaker": "FanDuel",
+      "allBooks": [
+        {
+          "bookmaker": "FanDuel",
+          "line": 30.5,
+          "overPrice": -114,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 36.5,
+          "overPrice": -106,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 29.5,
+          "overPrice": -104,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 37.5,
+          "overPrice": -108,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 34.5,
+          "overPrice": -108,
+          "underPrice": null
+        }
+      ]
+    },
+    {
+      "playerName": "Under",
+      "stat": "PR",
+      "line": 30.5,
+      "overPrice": -114,
+      "underPrice": null,
+      "bookmaker": "FanDuel",
+      "allBooks": [
+        {
+          "bookmaker": "FanDuel",
+          "line": 30.5,
+          "overPrice": -114,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 36.5,
+          "overPrice": -125,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 29.5,
+          "overPrice": -128,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 37.5,
+          "overPrice": -122,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 34.5,
+          "overPrice": -122,
+          "underPrice": null
+        }
+      ]
+    },
+    {
+      "playerName": "Over",
+      "stat": "PRA",
+      "line": 40.5,
+      "overPrice": -106,
+      "underPrice": null,
+      "bookmaker": "FanDuel",
+      "allBooks": [
+        {
+          "bookmaker": "FanDuel",
+          "line": 40.5,
+          "overPrice": -106,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 42.5,
+          "overPrice": -108,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 35.5,
+          "overPrice": -128,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 40.5,
+          "overPrice": -110,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 40.5,
+          "overPrice": -112,
+          "underPrice": null
+        }
+      ]
+    },
+    {
+      "playerName": "Under",
+      "stat": "PRA",
+      "line": 40.5,
+      "overPrice": -104,
+      "underPrice": null,
+      "bookmaker": "FanDuel",
+      "allBooks": [
+        {
+          "bookmaker": "FanDuel",
+          "line": 40.5,
+          "overPrice": -125,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 42.5,
+          "overPrice": -122,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 35.5,
+          "overPrice": -104,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 40.5,
+          "overPrice": -120,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 40.5,
+          "overPrice": -118,
+          "underPrice": null
+        }
+      ]
+    },
+    {
+      "playerName": "Over",
+      "stat": "REB",
+      "line": 8.5,
+      "overPrice": 134,
+      "underPrice": null,
+      "bookmaker": "FanDuel",
+      "allBooks": [
+        {
+          "bookmaker": "FanDuel",
+          "line": 8.5,
+          "overPrice": -146,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 5.5,
+          "overPrice": 104,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 2.5,
+          "overPrice": -174,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 11.5,
+          "overPrice": 102,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 4.5,
+          "overPrice": 134,
+          "underPrice": null
+        }
+      ]
+    },
+    {
+      "playerName": "Under",
+      "stat": "REB",
+      "line": 8.5,
+      "overPrice": 128,
+      "underPrice": null,
+      "bookmaker": "FanDuel",
+      "allBooks": [
+        {
+          "bookmaker": "FanDuel",
+          "line": 8.5,
+          "overPrice": 110,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 5.5,
+          "overPrice": -138,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 2.5,
+          "overPrice": 128,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 11.5,
+          "overPrice": -136,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 4.5,
+          "overPrice": -180,
+          "underPrice": null
+        }
+      ]
+    },
+    {
+      "playerName": "Over",
+      "stat": "RA",
+      "line": 14.5,
+      "overPrice": -106,
+      "underPrice": null,
+      "bookmaker": "FanDuel",
+      "allBooks": [
+        {
+          "bookmaker": "FanDuel",
+          "line": 14.5,
+          "overPrice": -138,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 14.5,
+          "overPrice": -125,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 9.5,
+          "overPrice": -120,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 9.5,
+          "overPrice": -146,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 14.5,
+          "overPrice": -106,
+          "underPrice": null
+        }
+      ]
+    },
+    {
+      "playerName": "Under",
+      "stat": "RA",
+      "line": 14.5,
+      "overPrice": 110,
+      "underPrice": null,
+      "bookmaker": "FanDuel",
+      "allBooks": [
+        {
+          "bookmaker": "FanDuel",
+          "line": 14.5,
+          "overPrice": 104,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 14.5,
+          "overPrice": -106,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 9.5,
+          "overPrice": -110,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 9.5,
+          "overPrice": 110,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 14.5,
+          "overPrice": -125,
+          "underPrice": null
+        }
+      ]
+    },
+    {
+      "playerName": "Over",
+      "stat": "3PM",
+      "line": 2.5,
+      "overPrice": 148,
+      "underPrice": null,
+      "bookmaker": "FanDuel",
+      "allBooks": [
+        {
+          "bookmaker": "FanDuel",
+          "line": 2.5,
+          "overPrice": -128,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 2.5,
+          "overPrice": 148,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 2.5,
+          "overPrice": 116,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 1.5,
+          "overPrice": 100,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 1.5,
+          "overPrice": -188,
+          "underPrice": null
+        }
+      ]
+    },
+    {
+      "playerName": "Under",
+      "stat": "3PM",
+      "line": 2.5,
+      "overPrice": 140,
+      "underPrice": null,
+      "bookmaker": "FanDuel",
+      "allBooks": [
+        {
+          "bookmaker": "FanDuel",
+          "line": 2.5,
+          "overPrice": -104,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 2.5,
+          "overPrice": -200,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 2.5,
+          "overPrice": -154,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 1.5,
+          "overPrice": -132,
+          "underPrice": null
+        },
+        {
+          "bookmaker": "FanDuel",
+          "line": 1.5,
+          "overPrice": 140,
+          "underPrice": null
+        }
+      ]
+    },
+    {
+      "playerName": "Over",
+      "stat": "BLK",
+      "line": 2.5,
+      "overPrice": -182,
+      "underPrice": null,
+      "bookmaker": "FanDuel",
+      "allBooks": [
+        {
+          "bookmaker": "FanDuel",
+          "line": 2.5,
+          "overPrice": -182,
+          "underPrice": null
+        }
+      ]
+    },
+    {
+      "playerName": "Under",
+      "stat": "BLK",
+      "line": 2.5,
+      "overPrice": 134,
+      "underPrice": null,
+      "bookmaker": "FanDuel",
+      "allBooks": [
+        {
+          "bookmaker": "FanDuel",
+          "line": 2.5,
+          "overPrice": 134,
+          "underPrice": null
+        }
+      ]
+    }
+  ],
+  "totalEvents": 3,
+  "totalProps": 82,
+  "creditsUsed": 15
+}

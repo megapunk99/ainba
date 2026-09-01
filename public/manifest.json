@@ -1,0 +1,21 @@
+{
+  "name": "SHARPEDGE — NBA Betting Intelligence",
+  "short_name": "SHARPEDGE",
+  "description": "Multi-agent AI system for NBA betting intelligence. Real-time odds, EV grading, player props, and news.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060a14",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["sports", "finance", "news"],
+  "lang": "en"
+}

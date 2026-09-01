@@ -1,0 +1,46 @@
+{
+  "name": "nba-ai-score",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "server": "node server/index.js",
+    "server:dev": "node --watch server/index.js",
+    "native:build": "cd server/native && node-gyp rebuild",
+    "native:clean": "cd server/native && node-gyp clean",
+    "fetch": "node server/fetch-data.cjs",
+    "fetch:nightly": "node server/fetch-data.cjs",
+    "logos": "node server/download-logos.cjs",
+    "db:seed": "node server/seed-db.cjs"
+  },
+  "dependencies": {
+    "axios": "^1.19.0",
+    "better-sqlite3": "^13.0.3",
+    "compression": "^1.8.1",
+    "cors": "^2.8.6",
+    "date-fns": "^4.4.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "idb": "^8.0.3",
+    "lucide-react": "^1.33.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.2",
+    "ws": "^8.21.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "jsdom": "^30.0.1",
+    "oxlint": "^1.75.0",
+    "vite": "^8.2.0",
+    "vitest": "^4.1.11"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "sharpedge-native",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "node-gyp rebuild",
+    "clean": "node-gyp clean"
+  },
+  "dependencies": {
+    "node-addon-api": "^7.0.0"
+  }
+}
